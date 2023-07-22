@@ -37,5 +37,5 @@ N/A
 
 ## Questions
 For additional questions, you can reach me via:
-- GitHub: [AWitthohn@yahoo.com](https://github.com/AWitthohn@yahoo.com)
+- GitHub: [A-Witthohn](https://github.com/A-Witthohn)
 - Email: AWitthohn@yahoo.com
