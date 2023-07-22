@@ -5,7 +5,6 @@ import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache()
@@ -13,25 +12,27 @@ const client = new ApolloClient({
 
 function App() {
   return (
-    <Router>
-      <>
-        <Navbar />
-        <Routes>
-          <Route 
-            path='/' 
-            element={<SearchBooks />} 
-          />
-          <Route 
-            path='/saved' 
-            element={<SavedBooks />} 
-          />
-          <Route 
-            path='*'
-            element={<h1 className='display-2'>Wrong page!</h1>}
-          />
-        </Routes>
-      </>
-    </Router>
+    <ApolloProvider client={client}>
+      <Router>
+        <>
+          <Navbar />
+          <Routes>
+            <Route 
+              path='/' 
+              element={<SearchBooks />} 
+            />
+            <Route 
+              path='/saved' 
+              element={<SavedBooks />} 
+            />
+            <Route 
+              path='*'
+              element={<h1 className='display-2'>Wrong page!</h1>}
+            />
+          </Routes>
+        </>
+      </Router>
+    </ApolloProvider>
   );
 }
 
